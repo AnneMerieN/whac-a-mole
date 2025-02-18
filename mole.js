@@ -133,7 +133,6 @@ function setMole() {
     }, 10);
 }
 
-// ✅ Function to spawn TWO bombs
 function setBombs() {
     if (gameOver) return;
 
@@ -154,9 +153,14 @@ function setBombs() {
     let num1 = getRandomTile();
     let num2 = getRandomTile();
 
-    // ✅ Ensure both bombs appear in different spots
+    // ✅ Make sure bomb1 does NOT spawn where Bidoof is
+    while (num1 === currMoleTile?.id) {
+        num1 = getRandomTile();
+    }
+
+    // ✅ Ensure bomb2 does NOT spawn in the same place as bomb1 or Bidoof
     let attempts = 0;
-    while (num2 === num1 && attempts < 10) {
+    while ((num2 === num1 || num2 === currMoleTile?.id) && attempts < 10) {
         num2 = getRandomTile();
         attempts++;
     }
