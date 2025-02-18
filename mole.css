@@ -1,31 +1,60 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
     text-align: center;
-    background: url("./mario-bg.jpg");
+    background: url("./pokemon-background.jpg");
     background-size: cover;
 }
+
+
+#startButton {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ffcc00; /* Pokémon-style Yellow */
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 3px 3px 0px #d4a900; /* Adds a pressed button effect */
+}
+
+#startButton:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+}
+
+#startButton:active {
+    background-color: #ff6600;
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
 
 #board {
     width: 540px;
     height: 540px;
-    /* background-color: green; */
-
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-
     background: url("./soil.png");
     background-size: cover;
-    border: 3px solid white;
-    border-radius: 25px;
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Adds a floating effect */
 }
 
+
 #board div {
-    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
     width: 180px; 
     height: 180px;
     background-image: url("./pipe.png");
     background-size: cover;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.1s ease-in-out;
 }
 
 #board div img {
@@ -33,9 +62,28 @@ body {
     width: 100px;
     height: 100px;
 
+
+    /* Image tags are not draggable or selectable */
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+#score {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+#timer {
+    font-size: 15px;
+}
+
+#highScore {
+    font-size: 15px;
 }
