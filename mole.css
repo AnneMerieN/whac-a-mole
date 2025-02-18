@@ -7,18 +7,25 @@ body {
 }
 
 
+/* ✅ Make the Start Game button pulse before starting */
 #startButton {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #ffcc00; /* Pokémon-style Yellow */
+    background-color: #ffcc00;
     color: black;
     font-size: 20px;
     font-weight: bold;
     padding: 12px 24px;
-    border: none;
+    border: 3px solid #ffe100;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    box-shadow: 3px 3px 0px #d4a900; /* Adds a pressed button effect */
+    box-shadow: 3px 3px 0px #d4a900;
+    margin-bottom: 15px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
 }
 
 #startButton:hover {
